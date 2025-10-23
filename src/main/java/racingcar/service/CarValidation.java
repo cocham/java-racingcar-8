@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 public class CarValidation {
     private static final String DELIMITER = ",";
     private static final int LIMIT_LENGTH = 5;
-    private static final String VALID_NAME_REGEX = "^[a-zA-Z0-9가-힣]*$";
+    private static final String VALID_NAME_REGEX = "^[a-zA-Z0-9가-힣]+$";
     private static final Pattern VALID_NAME_PATTERN = Pattern.compile(VALID_NAME_REGEX);
 
     public String[] returnCars(String cars) {

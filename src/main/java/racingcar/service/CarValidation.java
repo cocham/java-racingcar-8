@@ -2,22 +2,27 @@ package racingcar.service;
 
 import racingcar.exception.CarDuplicateException;
 import racingcar.exception.InvalidLengthException;
-import racingcar.model.Car;
 
 import java.util.HashSet;
 import java.util.Set;
 
 public class CarValidation {
-    public final String DELIMITER = ",";
+    private static final String DELIMITER = ",";
+    private static final int LIMIT_LENGTH = 5;
 
-    public void validateCarName(String cars) {
-        String[] carsInventory = cars.split(DELIMITER);
-        Set<String> carsUniqueSpace = new HashSet<>(carsInventory.length);
+    public String[] returnCars(String cars) {
+        String[] raceCars = cars.split(DELIMITER);
+        validateCars(raceCars);
+        return raceCars;
+    }
 
-        for (String car : carsInventory) {
+    private void validateCars(String[] raceCars) {
+        Set<String> carsUniqueSpace = new HashSet<>(raceCars.length);
+
+        for (String car : raceCars) {
             car = car.trim();
             int length = car.length();
-            if (length > 5) {
+            if (length > LIMIT_LENGTH) {
                 throw new InvalidLengthException(car, length);
             }
             if (!carsUniqueSpace.add(car)) {
@@ -25,6 +30,4 @@ public class CarValidation {
             }
         }
     }
-
-
 }

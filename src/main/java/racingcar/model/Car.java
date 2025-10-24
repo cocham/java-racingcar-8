@@ -9,7 +9,17 @@ public class Car {
         this.status = new StringBuilder();
     }
 
-    public void moveForward() {
+    public void attemptMove(int randomValue) {
+        if (canMove(randomValue)) {
+            moveForward();
+        }
+    }
+
+    private boolean canMove(int randomValue) {
+        return randomValue >= 4;
+    }
+
+    private void moveForward() {
         status.append("-");
     }
 

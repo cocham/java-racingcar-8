@@ -13,10 +13,13 @@ public class RaceController {
 
     public void run() {
         String carsInput = inputView.printStartMessage();
+        String raceCountInput = inputView.printRaceCountMessage();
 
         Cars cars = new Cars(carsInput);
+        RaceCount raceCount = new RaceCount(raceCountInput);
 
         outputView.printRacingMessage();
+        for (int i = 0; i < raceCount.count(); i++) {
             game.playOneRound(cars);
             outputView.printAllCarStatus(cars);
         }

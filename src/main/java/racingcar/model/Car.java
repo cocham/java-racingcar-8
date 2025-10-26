@@ -2,12 +2,12 @@ package racingcar.model;
 
 public class Car {
     private static final int MOVE_THRESHOLD = 4;
+    private static final char MOVE_MARK = '-';
     private final Name name;
-    private StringBuilder status;
+    private final StringBuilder status = new StringBuilder();
 
     public Car(Name name) {
         this.name = name;
-        this.status = new StringBuilder();
     }
 
     public void attemptMove(int randomValue) {
@@ -21,7 +21,7 @@ public class Car {
     }
 
     private void moveForward() {
-        status.append("-");
+        status.append(MOVE_MARK);
     }
 
     public String getStatus() {

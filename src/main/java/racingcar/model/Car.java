@@ -1,6 +1,7 @@
 package racingcar.model;
 
 public class Car {
+    private static final int MOVE_THRESHOLD = 4;
     private final Name name;
     private StringBuilder status;
 
@@ -16,7 +17,7 @@ public class Car {
     }
 
     private boolean canMove(int randomValue) {
-        return randomValue >= 4;
+        return randomValue >= MOVE_THRESHOLD;
     }
 
     private void moveForward() {

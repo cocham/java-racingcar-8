@@ -11,6 +11,7 @@ public class OutputView {
     private final String COLON = " : ";
     private final String WINNER_MESSAGE = "최종 우승자";
     private final String WINNER_SEPARATOR = ", ";
+    private final String MOVE_MARK = "-";
 
     public void printRacingMessage() {
         System.out.println(RACING_MESSAGE);
@@ -18,7 +19,7 @@ public class OutputView {
 
     public void printAllCarStatus(Cars cars) {
         for (Car car : cars) {
-            System.out.println(car.getName() + COLON + car.getStatus());
+            System.out.println(car.getName() + COLON + MOVE_MARK.repeat(car.getDistance()));
         }
         System.out.println();
     }

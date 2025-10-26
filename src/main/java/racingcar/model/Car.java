@@ -4,10 +4,11 @@ public class Car {
     private static final int MOVE_THRESHOLD = 4;
     private static final char MOVE_MARK = '-';
     private final Name name;
-    private final StringBuilder status = new StringBuilder();
+    private int distance = 0;
 
     public Car(Name name) {
         this.name = name;
+        this.distance = 0;
     }
 
     public void attemptMove(int randomValue) {
@@ -21,15 +22,11 @@ public class Car {
     }
 
     private void moveForward() {
-        status.append(MOVE_MARK);
-    }
-
-    public String getStatus() {
-        return status.toString();
+        distance++;
     }
 
     public int getDistance() {
-        return status.length();
+        return distance;
     }
 
     public String getName() {

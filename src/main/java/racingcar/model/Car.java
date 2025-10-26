@@ -1,10 +1,10 @@
 package racingcar.model;
 
 public class Car {
-    private String name;
+    private final Name name;
     private StringBuilder status;
 
-    public Car(String name) {
+    public Car(Name name) {
         this.name = name;
         this.status = new StringBuilder();
     }
@@ -32,6 +32,6 @@ public class Car {
     }
 
     public String getName() {
-        return name;
+        return name.name();
     }
 }

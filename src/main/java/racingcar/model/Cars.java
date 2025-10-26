@@ -1,17 +1,31 @@
 package racingcar.model;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import racingcar.exception.CarDuplicateException;
+
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Cars implements Iterable<Car> {
+    private static final String DELIMITER = ",";
     private List<Car> cars = new ArrayList<>();
 
-    public Cars(String[] raceCars) {
-        for (String name : raceCars) {
-            Car car = new Car(name);
-            cars.add(car);
+    public Cars(String carsInput) {
+        String[] carNames = carsInput.split(DELIMITER);
+        List<Name> names = Arrays.stream(carNames)
+                .map(Name::new)
+                .collect(Collectors.toList());
+        validateDuplicates(names);
+        this.cars = names.stream()
+                .map(Car::new)
+                .collect(Collectors.toList());
+    }
+
+    private void  validateDuplicates(List<Name> names) {
+        Set<Name> uniqueNames = new HashSet<>();
+        for (Name name : names) {
+            if (!uniqueNames.add(name)) {
+                throw new CarDuplicateException(name.name());
+            }
         }
     }
 

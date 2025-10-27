@@ -1,13 +1,12 @@
 package racingcar.controller;
 
-import racingcar.model.Cars;
-import racingcar.model.RaceCount;
+import racingcar.domain.*;
 import racingcar.service.Game;
 import racingcar.view.InputView;
 import racingcar.view.OutputView;
 
 public class RaceController {
-    private final Game game = new Game();
+    private final Game game = new Game(MoveConditions.random());
     private final InputView inputView = new InputView();
     private final OutputView outputView = new OutputView();
 

@@ -1,15 +1,22 @@
 package racingcar.service;
 
-import racingcar.model.Car;
-import racingcar.model.Cars;
-
-import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
+import racingcar.domain.Car;
+import racingcar.domain.Cars;
+import racingcar.domain.MoveCondition;
 
 public class Game {
+    private final MoveCondition moveCondition;
+
+    public Game(MoveCondition moveCondition) {
+        this.moveCondition = moveCondition;
+    }
+
+
     public void playOneRound(Cars cars) {
         for (Car car : cars) {
-            int randomValue = pickNumberInRange(0,9);
-            car.attemptMove(randomValue);
+            if (moveCondition.canMove()) {
+                car.moveForward();
+            }
         }
     }
 }

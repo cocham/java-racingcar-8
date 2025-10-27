@@ -1,26 +1,16 @@
-package racingcar.model;
-
-import racingcar.service.MoveStrategy;
+package racingcar.domain;
 
 public class Car {
     private static final char MOVE_MARK = '-';
     private final Name name;
     private int distance = 0;
-    private final MoveStrategy moveStrategy;
 
-    public Car(Name name, MoveStrategy moveStrategy) {
+    public Car(Name name) {
         this.name = name;
         this.distance = 0;
-        this.moveStrategy = moveStrategy;
     }
 
-    public void moveIf(boolean shouldMove) {
-        if (shouldMove) {
-            moveForward();
-        }
-    }
-
-    private void moveForward() {
+    public void moveForward() {
         distance++;
     }
 

@@ -6,9 +6,15 @@ import racingcar.view.InputView;
 import racingcar.view.OutputView;
 
 public class RaceController {
-    private final Game game = new Game(MoveConditions.random());
-    private final InputView inputView = new InputView();
-    private final OutputView outputView = new OutputView();
+    private final Game game;
+    private final InputView inputView;
+    private final OutputView outputView;
+
+    public RaceController(Game game, InputView inputView, OutputView outputView) {
+        this.game = game;
+        this.inputView = inputView;
+        this.outputView = outputView;
+    }
 
     public void run() {
         String carsInput = inputView.printStartMessage();

@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 public record Name(String name) {
     private static final String VALID_NAME_REGEX = "^[a-zA-Z0-9가-힣]+$";
-    private static final Pattern VALID_NAME_PATTERN = Pattern.it compile(VALID_NAME_REGEX);
+    private static final Pattern VALID_NAME_PATTERN = Pattern.compile(VALID_NAME_REGEX);
     private static final int VALID_NAME_MAX_LENGTH = 5;
 
     public Name {

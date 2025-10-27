@@ -1,24 +1,23 @@
 package racingcar.model;
 
+import racingcar.service.MoveStrategy;
+
 public class Car {
-    private static final int MOVE_THRESHOLD = 4;
     private static final char MOVE_MARK = '-';
     private final Name name;
     private int distance = 0;
+    private final MoveStrategy moveStrategy;
 
-    public Car(Name name) {
+    public Car(Name name, MoveStrategy moveStrategy) {
         this.name = name;
         this.distance = 0;
+        this.moveStrategy = moveStrategy;
     }
 
-    public void attemptMove(int randomValue) {
-        if (canMove(randomValue)) {
+    public void moveIf(boolean shouldMove) {
+        if (shouldMove) {
             moveForward();
         }
-    }
-
-    private boolean canMove(int randomValue) {
-        return randomValue >= MOVE_THRESHOLD;
     }
 
     private void moveForward() {

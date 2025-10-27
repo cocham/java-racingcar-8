@@ -1,7 +1,6 @@
 package racingcar.domain;
 
 public class Car {
-    private static final char MOVE_MARK = '-';
     private final Name name;
     private int distance = 0;
 

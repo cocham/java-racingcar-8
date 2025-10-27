@@ -1,16 +1,21 @@
 package racingcar.domain;
 
 import racingcar.exception.CarDuplicateException;
+import racingcar.exception.CarMinimumException;
 
 import java.util.*;
 import java.util.stream.Collectors;
 
 public class Cars implements Iterable<Car> {
     private static final String DELIMITER = ",";
+    private static final int MINIMUM_CARS_FOR_RACE = 2;
     private List<Car> cars = new ArrayList<>();
 
     public Cars(String carsInput) {
         String[] carNames = carsInput.split(DELIMITER);
+        if (carNames.length < MINIMUM_CARS_FOR_RACE) {
+            throw new CarMinimumException(MINIMUM_CARS_FOR_RACE);
+        }
         List<Name> names = Arrays.stream(carNames)
                 .map(Name::new)
                 .collect(Collectors.toList());

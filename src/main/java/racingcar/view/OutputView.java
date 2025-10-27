@@ -1,7 +1,7 @@
 package racingcar.view;
 
-import racingcar.model.Car;
-import racingcar.model.Cars;
+import racingcar.domain.Car;
+import racingcar.domain.Cars;
 
 import java.util.List;
 import java.util.stream.Collectors;

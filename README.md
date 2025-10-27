@@ -28,6 +28,7 @@
 
 ### 2. 입력값 검증
 
+
 **자동차 이름 검증**
 - 입력값이 NULL인 경우 → `IllegalArgumentException`
 - 쉼표(`,`) 기준으로 분리
@@ -37,8 +38,12 @@
     - 형식 불일치 시 → `IllegalArgumentException`
 - 이름 길이가 5자 이하인지 확인
     - 초과 시 → `IllegalArgumentException`
-- 중복된 이름이 있는지 확인
-    - 중복 시 → `IllegalArgumentException`
+
+**자동차 검증**
+- 자동차 수가 2대 이상인지 확인 
+  - 2대 미만일 시 -> `IllegalArgumentException`
+- 중복된 차가 있는지 확인
+  - 중복 시 → `IllegalArgumentException`
 
 **시도 횟수 검증**
 - 정수로 변환 가능한지 확인

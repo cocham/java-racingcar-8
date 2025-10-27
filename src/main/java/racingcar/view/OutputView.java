@@ -7,11 +7,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class OutputView {
-    private final String RACING_MESSAGE = "실행 결과";
-    private final String COLON = " : ";
-    private final String WINNER_MESSAGE = "최종 우승자";
-    private final String WINNER_SEPARATOR = ", ";
-    private final String MOVE_MARK = "-";
+    private static final String RACING_MESSAGE = "실행 결과";
+    private static final String COLON = " : ";
+    private static final String WINNER_MESSAGE = "최종 우승자";
+    private static final String WINNER_SEPARATOR = ", ";
+    private static final String MOVE_MARK = "-";
 
     public void printRacingMessage() {
         System.out.println(RACING_MESSAGE);

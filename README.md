@@ -50,6 +50,8 @@
     - 불가능 시 → `IllegalArgumentException`
 - 1 이상의 양수인지 확인
     - 불일치 시 → `IllegalArgumentException`
+- 최소 횟수와 최대 횟수 사이인지 확인
+  -  1이상 50이하 만족 못할 시 -> `IllegalArgumentException`
 
 ### 3. 경주 진행
 - 초기 상태: 모든 자동차의 위치는 0
